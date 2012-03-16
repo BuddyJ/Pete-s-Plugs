@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pete's Plugs</title>
+	<link rel="stylesheet" type="text/css" href="styles/master.css">
+	<link rel="stylesheet" type="text/css" href="styles/960.css">
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function (){
+    
+
+    // you have a parent Div, and it has a name
+    var $gallery = $('#thumbnailGallery');
+    
+    // you h ave thumbnails
+
+    var $thumbnails = $gallery.find('.productThumb');
+
+    // you have a 'main image'
+
+    var $viewport = $('#productImage').find('img');
+
+    //My Text thing i'm trying to write
+
+    var $name = $('#productName');
+
+    // now for the important part - for each thumbnail, you add a data-attribute that has the fullsize image's location
+    // data-fullportait = "http://location.location.jpeg"
+    // they also have their own src too
+
+
+    // and assign events!
+
+    $thumbnails.on('click', function(){
+    	
+    	//inside this function 'this' is equal to the element that was clicked on.
+		//Fetch img src from clicked on thumbnail.
+    	var thumbnailSrc = $(this).data('fullportait');
+    	
+    	//This hides the var "viewport"
+    	$viewport.hide();
+
+    	//This stripps the active class from all the thumbnail images
+    	$thumbnails.removeClass('active');
+
+    	//this takes the var "thumbnailSrc" which we created on the first line of events and shoves it in the img src
+        $viewport.attr('src', thumbnailSrc);
+
+        //this adds the class active to the clicked thumbnail
+        $(this).addClass('active');
+
+        //this fades the var "viewport" in
+        $viewport.fadeIn();
+
+        //this creates a var and tells it to grab the data from the thumbnail element
+        var producttext = $(this).data('producttext');
+
+        //this uses the var just created to shove text into the name var
+        $name.text(producttext);
+     
+
+
+    });
+
+
+});
+
+
+	</script>
+</head>
+<body>
+	<header>
+		<div class="container_12">
+            <div class="grid_6">
+                <div id="logo"></div>
+            </div>
+			<div class="grid_6">
+				<nav>
+                    <a href="/">Home</a>
+					<a href="http://totalruckus.com/phpBB3/viewtopic.php?f=47&t=62317">Contact Pete</a>
+				    <a href="/faq">FAQ</a>
+                    <a href="/store">Store</a>
+				</nav>
+
+			</div>
+            <div class="clear"></div>
+		</div>
+	</header>
+    <%= yield %>
+
+</div class="clear"></div>
+</body>
+</html>
