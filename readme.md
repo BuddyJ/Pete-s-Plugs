@@ -49,3 +49,60 @@ To create a new FAQ just copy and paste an old one. You'll want the title which 
 
 Good! the page I linked in the first part of this doc should answer your questions and explain Sinatra too you. Sinatra is boss. It's a light weight Rails thing that lets us do simple things like make forms and pages and stuff. It has a structure. You have the folder *Public* which is where your images, scripts & styles all live. Sinatra knows to look there for any of that kind of stuff. You also have a folder called *Views* inside of this folder is where all the (you guessed it) views live. It's importaint to note that layout.erb is what will contain your header and footer on your webpage as well as all of the HTML junk needed to link to stylesheets & scripts. The other file app.rb handels all the routing and when you do more complex stuff (which i've never done) it goes there as well. Inside of app.rb you need to `require 'rubygems'`. This is an older pratcie that i read wasn't 100% needed anymore but it's recomended to still do it. After that you'll want to `require 'sinatra'`. This tells the app that it needs ruby & sinatra. If you're wanting to use SASS you'd `require 'sass'` Once you've required all the things you need you'll need to set up your pages. `get '/' do erb :index end` for example is telling sinatra that when ever it sees '/' in as a link it needs to take you to index.erb. We called it erb by saying *erb :index* An HTML page wouldn't work here. Sorry. So if you wanted to link to your store page you'd tell it `get '/store' do erb :store end` YAY! now you know about Sinatra! One last thing tho. you'll need to use the rails `<=% yield %>` command in layout.erb to insert your pages. So you'll want this where the page is suppose to be displayed, after the header and before the footer. 
 
+---
+
+**Using your Logo File**
+
+I've included your logo. `petes_logo.ai` It's an Adobe Illustrator CS5 file. I've included the color samples & a black & White version. The fonts have been flattened so that you can use the file with out having to have the fonts. If you need the fonts you can find them here:
+
+1. [LHF Five & Dime:](http://letterheadfonts.com/fonts/fiveanddime.php) This is the PETE'S font. It's around $45.00. 
+
+2. [Liberator](http://www.losttype.com/font/?name=liberator) Great Retro font. It's free or donate from the Lost Type Co-Op
+
+**I wanna make a T-shirt!**
+
+Cool. You can either have me do it, or, to prep your logo file you'll need to open it in Illustrator, copy your logo to a new document. File > Save As > Illustrator EPS > Illustrator 9. This allows the printer to use Macromedia FreeHand, CorelDraw, or any version of Adobe Illustrator 9 & above. It alsow allows the printer to use any version of Photoshop CS3 & up and see the logo as a vector object. That's ALWAYS a win :)
+
+**I wanna use the logo but i want it distressed**
+
+This one is doable but tricky. Depends on the size. The file on the webpage is not big. We'll have to revisit it if you want that. 
+
+**I wanna make a cool stamp or something**
+
+That'd be awesome and I really think that you should. It'd be super sweet to wrap your wires in brown butcher's paper then stamp your logo on it. Just find a place on the net that does it and then figure out what kind of file they need and what size it is. Then follow The t-shirt steps to produce the proper file! It's bi-winning. I bet you'd wanna use the black & White logo for a stamp tho, just saying
+
+---
+
+**GitHub is awesome, but i want this on my computer.**
+
+That's really doable. 
+
+**On A Mac**
+
+1. Simply download their GitHub for Mac GUI. 
+
+2. On the repo page click the *"Clone In Mac"* button on the upper left. 
+
+3. Save it whereever you want it to be saved at. 
+
+4. Go there on your computer. It's epic winning. 
+
+**For PC**
+
+1. Copy the remote URL
+
+2. In the command line CD to where the project should live
+
+3. `git clone` the remote URL
+
+DONE.
+
+Or...
+
+Click the download ZIP file :)
+
+---
+
+Any other questions you can just ask me. Any server tech questions you probably ought to ask Ben. He's smarter than I am.
+
+---
